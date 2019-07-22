@@ -285,14 +285,76 @@ body {
   padding: 0;
   margin: 0; }
 
+.leaflet-container {
+  background-color: white; }
+
 main {
   display: block; }
   @media (max-width: 825px) {
     main {
       display: block; } }
+  main h1 {
+    text-align: center; }
 
 #map {
   margin: auto;
-  height: 100vh; }
+  height: 90vh; }
+  #map #buttonContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000; }
+
+.legend {
+  padding: 10px;
+  background-color: white;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555; }
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 1; }
+
+button.my-button {
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+  background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+  background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+  background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+  background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff; }
+
+button.my-button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+  background: -moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+  background: -webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+  background: -o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+  background-color: #f6f6f6; }
+
+button.my-button:active {
+  background-color: red;
+  position: relative;
+  top: 1px; }
 
 /*# sourceMappingURL=styles.css.map */
