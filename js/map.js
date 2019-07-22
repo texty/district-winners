@@ -15,7 +15,7 @@ var map = L.map('map').setView([49.35, 29.51], 6);
 //
 // }).addTo(map);
 
-L.tileLayer('//stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
     subdomains: 'abcd',
     minZoom: 6,
     maxZoom: 18
