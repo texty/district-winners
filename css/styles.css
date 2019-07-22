@@ -324,6 +324,9 @@ h4 {
 .leaflet-container {
   background-color: white; }
 
+.leaflet-popup-content-wrapper {
+  max-width: 90vw; }
+
 main {
   display: block; }
   @media (max-width: 825px) {
