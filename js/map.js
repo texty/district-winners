@@ -20,7 +20,7 @@ map.attributionControl.setPosition('bottomleft');
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     attribution: 'Map tiles by Carto',
-    minZoom: 6,
+    minZoom: 4,
     maxZoom: 10
 }).addTo(map);
 
@@ -58,7 +58,19 @@ function style(feature) {
 }
 
 function onEachFeature(feature, layer) {
-    layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>" + feature.properties.winners_name + "</b> <br>" + feature.properties.winners_info);
+    if(feature.properties.winners_name != null){
+        layer.bindPopup("<div style='display:grid; grid-template-columns: auto 100px;'>" +
+            "<div><b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>" +
+            feature.properties.winners_name + "</b> <br>" +
+            feature.properties.winners_info +  "<br></div>" +
+            "<image class='photo' src='" + feature.properties.winners_image + "'/>"
+
+        );
+    } else {
+        layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>"+
+                "Вибори не проводились. Окупована територія"
+        )
+    }
 }
 
 var geojsonLayer = new L.GeoJSON.AJAX("data/all_tvo_with_result.geojson", { style: style,  onEachFeature: onEachFeature} );
