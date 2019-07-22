@@ -59,11 +59,12 @@ function style(feature) {
 
 function onEachFeature(feature, layer) {
     if(feature.properties.winners_name != null){
-        layer.bindPopup("<div style='display:grid; grid-template-columns: auto 100px;'>" +
-            "<div><b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>" +
-            feature.properties.winners_name + "</b> <br>" +
+        layer.bindPopup("<span style='font-size:15px; font-weight: 800'>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "</span><br>" +
+            "<span style='font-size:15px; font-weight: 800'>" +feature.properties.winners_name + "</span> <br><br>" +
+            "<span style='font-size:15px; font-weight: 800; color:red'>" + feature.properties.winners_percent + "% голосів</span> <br><br>" +
+            "<div style='display:grid; grid-template-columns: auto 100px;'><div>" +
             feature.properties.winners_info +  "<br></div>" +
-            "<image class='photo' src='" + feature.properties.winners_image + "'/>"
+            "<image class='photo' src='" + feature.properties.winners_image + "'/></div>"
 
         );
     } else {
