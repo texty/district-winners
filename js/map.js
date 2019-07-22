@@ -16,7 +16,7 @@ var map = L.map('map').setView([49.35, 29.51], 6);
 // }).addTo(map);
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
-    subdomains: 'abcd',
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL',
     minZoom: 6,
     maxZoom: 18
 }).addTo(map);
