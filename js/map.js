@@ -2,19 +2,25 @@
  * Created by yevheniia on 15.06.19.
  */
 
-
-
-var map = L.map('map').setView([49.35, 29.51], 6);
+var map;
+if(window.innerWidth <= 800){
+    map = L.map('map').setView([43.35, 29.51], 4);
+}
+if(window.innerWidth > 800){
+    map = L.map('map').setView([49.35, 29.51], 6);
+}
 
 map.zoomControl.setPosition('bottomright');
+map.attributionControl.setPosition('bottomleft');
+
 
 //https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png  чорна
 ///https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png
 
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL',
-    minZoom: 6,
+    attribution: 'Map tiles by Carto',
+    minZoom: 4,
     maxZoom: 10
 }).addTo(map);
 
