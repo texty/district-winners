@@ -109,6 +109,16 @@ function onEachFeature_oldrada(feature, layer) {
     layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>" + feature.properties.deputes_14_name + "</b>");
 }
 
+var legend_oldrada = L.control({position: 'bottomleft'});
+
+legend_oldrada.onAdd = function () {
+    var div = L.DomUtil.create("div", "legend_oldrada");
+    div.innerHTML += "<h4>Кольорами позначено:</h4>";
+    div.innerHTML += '<i style="background: #a6d96a"></i><span>Втримались</span><br>';
+    div.innerHTML += '<i style="background: #ffffbf"></i><span>Не втримались</span><br>';
+    return div;
+};
+
 
 //депутати 2014 року
 var geojsonLayer_oldrada = new L.GeoJSON.AJAX("data/all_tvo_2014.geojson", { style: style_oldrada, onEachFeature: onEachFeature_oldrada} );
@@ -126,7 +136,8 @@ winners.addEventListener('click', function(e) {
     // document.getElementById('winners').style.color = "white";
     document.getElementById('losers').style.background = "linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%)";
     document.getElementById('losers').style.color = " #666666";
-
+    map.removeControl(legend_oldrada);
+    legend.addTo(map);
 
     additionalLayer.remove(geojsonLayer);
     geojsonLayer.addTo(additionalLayer);
@@ -143,6 +154,8 @@ losers.addEventListener('click', function(e) {
     document.getElementById('winners').style.background = "linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%)";
     document.getElementById('winners').style.color = " #666666";
     map.removeControl(legend);
+    legend_oldrada.addTo(map);
+
 
 
     additionalLayer.remove(geojsonLayer);
