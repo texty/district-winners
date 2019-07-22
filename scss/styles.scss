@@ -14,15 +14,35 @@ body {
   margin:0;
 }
 
+#header {
+  padding:10vh;
+  height:auto;
+
+  h1 {
+    font-size:40pt;
+    text-align: center;
+  }
+
+  h3 {
+    width:50%;
+    margin:auto;
+    font-size:25px;
+    text-align: center;
+    line-height:1.6
+  }
+}
+
+
+
 h4 {
   margin:5px 0;
 }
 
+
+
 .leaflet-container {
   background-color: white;
 }
-
-
 
 
 main {
@@ -30,13 +50,7 @@ main {
   @media (max-width:825px) {
     display:block;
   }
-
-
-  h1 {
-    text-align: center;
-  }
 }
-
 
 
 #map {

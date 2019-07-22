@@ -288,6 +288,19 @@ body {
   padding: 0;
   margin: 0; }
 
+#header {
+  padding: 10vh;
+  height: auto; }
+  #header h1 {
+    font-size: 40pt;
+    text-align: center; }
+  #header h3 {
+    width: 50%;
+    margin: auto;
+    font-size: 25px;
+    text-align: center;
+    line-height: 1.6; }
+
 h4 {
   margin: 5px 0; }
 
@@ -299,8 +312,6 @@ main {
   @media (max-width: 825px) {
     main {
       display: block; } }
-  main h1 {
-    text-align: center; }
 
 #map {
   margin: auto;

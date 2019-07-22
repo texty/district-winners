@@ -20,7 +20,7 @@ map.attributionControl.setPosition('bottomleft');
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     attribution: 'Map tiles by Carto',
-    minZoom: 4,
+    minZoom: 6,
     maxZoom: 10
 }).addTo(map);
 
