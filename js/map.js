@@ -4,12 +4,23 @@
 
 var map;
 if(window.innerWidth <= 800){
-    map = L.map('map').setView([43.35, 29.51], 4);
+    map = L.map('map').setView([48, 29.51], 4);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: 'Map tiles by Carto',
+        minZoom: 4,
+        maxZoom: 10
+    }).addTo(map);
 }
 if(window.innerWidth > 800){
     map = L.map('map').setView([49.35, 29.51], 6);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: 'Map tiles by Carto',
+        minZoom: 6,
+        maxZoom: 10
+    }).addTo(map);
 }
 
+map.scrollWheelZoom.disable();
 map.zoomControl.setPosition('bottomright');
 map.attributionControl.setPosition('bottomleft');
 
@@ -20,7 +31,7 @@ map.attributionControl.setPosition('bottomleft');
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     attribution: 'Map tiles by Carto',
-    minZoom: 4,
+    minZoom: 6,
     maxZoom: 10
 }).addTo(map);
 
@@ -80,14 +91,13 @@ var legend = L.control({position: 'bottomleft'});
 
 legend.onAdd = function () {
     var div = L.DomUtil.create("div", "legend");
-    div.innerHTML += "<h4>Кольорами позначено:</h4>";
     div.innerHTML += '<i style="background: #a6d96a"></i><span>Слуга народу</span><br>';
     div.innerHTML += '<i style="background: #ffffbf"></i><span>Самовисуванці</span><br>';
-    div.innerHTML += '<i style="background: #66c2a5"></i><span>Оппозиційна платформа - За життя</span><br>';
+    div.innerHTML += '<i style="background: #66c2a5"></i><span>ОП - За життя</span><br>';
     div.innerHTML += '<i style="background: #fdae61"></i><span>Батьківщина</span><br>';
-    div.innerHTML += '<i style="background: #cab2d6"></i><span>Європейська солідарність</span><br>';
+    div.innerHTML += '<i style="background: #cab2d6"></i><span>ЄС</span><br>';
     div.innerHTML += '<i style="background: #d53e4f"></i><span>Голос</span><br>';
-    div.innerHTML += '<i style="background: #a6cee3"></i><span>Оппозиційний блок</span><br>';
+    div.innerHTML += '<i style="background: #a6cee3"></i><span>Опоблок</span><br>';
     div.innerHTML += '<i style="background: #fb9a99"></i><span>Інші</span><br>';
 
 
