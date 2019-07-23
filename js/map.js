@@ -80,7 +80,7 @@ function onEachFeature(feature, layer) {
         );
     } else {
         layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>"+
-                "Вибори не проводились. Окупована територія"
+                "Окупована територія"
         )
     }
 }
@@ -135,7 +135,23 @@ function style_oldrada(feature) {
 }
 
 function onEachFeature_oldrada(feature, layer) {
-    layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>" + feature.properties.deputes_14_name + "</b>");
+
+    if(feature.properties.deputes_14_name != "NA" && feature.properties.deputes_14_name != null){
+        layer.bindPopup("<span style='font-size:15px; font-weight: 800'>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "</span><br>" +
+            "<span style='font-size:15px; font-weight: 800'>" +feature.properties.deputes_14_name + "</span> <br><br>" +
+            "<div style='display:grid; grid-template-columns: auto 100px;'><div>" +
+            feature.properties.deputes_14_info +  "<br></div>" +
+            "<image class='photo' src='" + feature.properties.deputes_14_image + "'/></div>"
+
+        );
+    } else if(feature.properties.deputes_14_name === "NA"){
+        layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>" + feature.properties.deputes_14_joinName.toUpperCase() + "</b>");
+
+    }  else if(feature.properties.deputes_14_name === null) {
+        layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>"+
+            "Окупована територія"
+        )
+    }
 }
 
 var legend_oldrada = L.control({position: 'bottomleft'});
