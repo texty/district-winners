@@ -49,8 +49,8 @@ function getColor(d) {
                     d === 'Політична партія Європейська Солідарність'   ? '#cab2d6' :
                         d === 'політична партія Єдиний Центр'   ? '#fb9a99' :
                             d === 'Політична партія Об’єднання САМОПОМІЧ'   ? '#fb9a99' :
-                                d === 'Політична партія ОПОЗИЦІЙНА ПЛАТФОРМА – ЗА ЖИТТЯ'  ? '#66c2a5' :
-                                    d === 'Політична партія ОПОЗИЦІЙНИЙ БЛОК'  ? '#a6cee3' :
+                                d === 'Політична партія ОПОЗИЦІЙНА ПЛАТФОРМА – ЗА ЖИТТЯ'  ? '#0093C3' :
+                                    d === 'Політична партія ОПОЗИЦІЙНИЙ БЛОК'  ? '#00BEFF' :
                                         d === 'ПОЛІТИЧНА ПАРТІЯ СЛУГА НАРОДУ' ? "#a6d96a":
                                             d === 'Самовисування' ? "#DEE3FB":
                                                'white';
@@ -93,11 +93,11 @@ legend.onAdd = function () {
     var div = L.DomUtil.create("div", "legend");
     div.innerHTML += '<i style="background: #a6d96a"></i><span>Слуга народу</span><br>';
     div.innerHTML += '<i style="background: #E6EFFF"></i><span>Самовисуванці</span><br>';
-    div.innerHTML += '<i style="background: #66c2a5"></i><span>ОП - За життя</span><br>';
+    div.innerHTML += '<i style="background: #0093C3"></i><span>ОП - За життя</span><br>';
     div.innerHTML += '<i style="background: red"></i><span>Батьківщина</span><br>';
     div.innerHTML += '<i style="background: #cab2d6"></i><span>ЄС</span><br>';
     div.innerHTML += '<i style="background: #fdae61"></i><span>Голос</span><br>';
-    div.innerHTML += '<i style="background: #a6cee3"></i><span>Опоблок</span><br>';
+    div.innerHTML += '<i style="background: #00BEFF"></i><span>Опоблок</span><br>';
     div.innerHTML += '<i style="background: #fb9a99"></i><span>Інші</span><br>';
 
 
