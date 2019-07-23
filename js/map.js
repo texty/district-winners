@@ -158,8 +158,8 @@ var legend_oldrada = L.control({position: 'bottomleft'});
 
 legend_oldrada.onAdd = function () {
     var div = L.DomUtil.create("div", "legend_oldrada");
-    div.innerHTML += '<i style="background: #a6d96a"></i><span>Народний депутат VIII скл.</span><br>';
-    div.innerHTML += '<i style="background: #ffffbf"></i><span>Нове обличчя</span><br>';
+    div.innerHTML += '<i style="background: #a6d96a"></i><span>Залишився на своєму окрузі</span><br>';
+    div.innerHTML += '<i style="background: #ffffbf"></i><span>Попрощався з округом</span><br>';
     return div;
 };
 
