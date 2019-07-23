@@ -295,17 +295,30 @@ body {
     #header {
       padding: 10vh 10px 10px 10px; } }
   #header h1 {
+    width: 50%;
+    margin: 30px auto;
     font-size: 40pt;
-    text-align: center; }
+    text-align: left; }
+    @media (max-width: 1200px) {
+      #header h1 {
+        text-align: left;
+        width: 90%;
+        font-size: 35px; } }
     @media (max-width: 800px) {
       #header h1 {
         font-size: 25px; } }
   #header h3 {
     width: 50%;
     margin: auto;
-    font-size: 25px;
-    text-align: center;
+    font-size: 23px;
+    text-align: left;
     line-height: 1.6; }
+    @media (max-width: 1200px) {
+      #header h3 {
+        text-align: left;
+        width: 90%;
+        margin: auto;
+        font-size: 18px; } }
     @media (max-width: 800px) {
       #header h3 {
         width: 100%;
@@ -314,7 +327,7 @@ body {
   #header h5 {
     font-size: 18px;
     font-weight: 400;
-    text-align: center;
+    text-align: right;
     margin: 50px auto;
     width: 50%; }
 
