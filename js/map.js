@@ -52,7 +52,7 @@ function getColor(d) {
                                 d === 'Політична партія ОПОЗИЦІЙНА ПЛАТФОРМА – ЗА ЖИТТЯ'  ? '#66c2a5' :
                                     d === 'Політична партія ОПОЗИЦІЙНИЙ БЛОК'  ? '#a6cee3' :
                                         d === 'ПОЛІТИЧНА ПАРТІЯ СЛУГА НАРОДУ' ? "#a6d96a":
-                                            d === 'Самовисування' ? "lightgrey":
+                                            d === 'Самовисування' ? "#DEE3FB":
                                                'white';
 }
 
@@ -61,8 +61,8 @@ function style(feature) {
     return {
         fillColor: getColor(feature.properties.winners_party),
         weight: 1,
-        opacity: 1,
-        color: 'grey',
+        opacity: 0.5,
+        color: '#484D60',
         //dashArray: '3',
         fillOpacity: 1
     };
@@ -92,7 +92,7 @@ var legend = L.control({position: 'bottomleft'});
 legend.onAdd = function () {
     var div = L.DomUtil.create("div", "legend");
     div.innerHTML += '<i style="background: #a6d96a"></i><span>Слуга народу</span><br>';
-    div.innerHTML += '<i style="background: #ffffbf"></i><span>Самовисуванці</span><br>';
+    div.innerHTML += '<i style="background: #E6EFFF"></i><span>Самовисуванці</span><br>';
     div.innerHTML += '<i style="background: #66c2a5"></i><span>ОП - За життя</span><br>';
     div.innerHTML += '<i style="background: red"></i><span>Батьківщина</span><br>';
     div.innerHTML += '<i style="background: #cab2d6"></i><span>ЄС</span><br>';
@@ -117,8 +117,8 @@ additionalLayer.addTo(map);
 var old_rada = new L.LayerGroup();
 
 function getColor_oldrada(d) {
-    return d === 'true' ? '#E8F6D0' :
-                d === 'false' ? '#58AD60' :
+    return d === 'true' ? '#E6EFFF' :
+                d === 'false' ? '#a6d96a' :
                     'white';
 }
 
@@ -127,8 +127,8 @@ function style_oldrada(feature) {
     return {
         fillColor: getColor_oldrada(feature.properties.deputes_14_exit),
         weight: 0.5,
-        opacity: 1,
-        color: 'grey',
+        opacity: 0.5,
+        color: '#484D60',
         //dashArray: '3',
         fillOpacity: 1
     };
@@ -158,8 +158,8 @@ var legend_oldrada = L.control({position: 'bottomleft'});
 
 legend_oldrada.onAdd = function () {
     var div = L.DomUtil.create("div", "legend_oldrada");
-    div.innerHTML += '<i style="background: #58AD60"></i><span>Залишився на окрузі</span><br>';
-    div.innerHTML += '<i style="background: #E8F6D0"></i><span>Попрощався з округом</span><br>';
+    div.innerHTML += '<i style="background: #a6d96a"></i><span>Залишився на окрузі</span><br>';
+    div.innerHTML += '<i style="background: #E6EFFF"></i><span>Попрощався з округом</span><br>';
     return div;
 };
 
@@ -168,7 +168,10 @@ legend_oldrada.onAdd = function () {
 var geojsonLayer_oldrada = new L.GeoJSON.AJAX("data/all_tvo_2014.geojson", { style: style_oldrada, onEachFeature: onEachFeature_oldrada} );
 geojsonLayer_oldrada.addTo(old_rada);
 
-document.getElementById('winners').style.background = "#C5E1A5";
+document.getElementById('winners').style.background = "#08B930";
+document.getElementById('losers').style.background = "linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%)";
+document.getElementById('winners').style.color = "white";
+
 
 
 /* Переключення між кнопками */
@@ -176,8 +179,8 @@ document.getElementById('winners').style.background = "#C5E1A5";
 
 const winners = document.getElementById('winners');
 winners.addEventListener('click', function(e) {
-    document.getElementById('winners').style.background = "#C5E1A5";
-    // document.getElementById('winners').style.color = "white";
+    document.getElementById('winners').style.background = "#08B930";
+    document.getElementById('winners').style.color = "white";
     document.getElementById('losers').style.background = "linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%)";
     document.getElementById('losers').style.color = " #666666";
     map.removeControl(legend_oldrada);
@@ -193,8 +196,8 @@ winners.addEventListener('click', function(e) {
 
 const losers = document.getElementById('losers');
 losers.addEventListener('click', function(e) {
-    document.getElementById('losers').style.background = "#C5E1A5";
-    // document.getElementById('losers').style.color = "white";
+    document.getElementById('losers').style.background = "#08B930";
+    document.getElementById('losers').style.color = "white";
     document.getElementById('winners').style.background = "linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%)";
     document.getElementById('winners').style.color = " #666666";
     map.removeControl(legend);
