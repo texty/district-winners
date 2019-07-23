@@ -62,7 +62,7 @@ function style(feature) {
         fillColor: getColor(feature.properties.winners_party),
         weight: 1,
         opacity: 0.5,
-        color: '#484D60',
+        color: '#666666',
         //dashArray: '3',
         fillOpacity: 1
     };
@@ -126,9 +126,9 @@ function getColor_oldrada(d) {
 function style_oldrada(feature) {
     return {
         fillColor: getColor_oldrada(feature.properties.deputes_14_exit),
-        weight: 0.5,
+        weight: 1,
         opacity: 0.5,
-        color: '#484D60',
+        color: '#666666',
         //dashArray: '3',
         fillOpacity: 1
     };
@@ -200,7 +200,7 @@ losers.addEventListener('click', function(e) {
     document.getElementById('losers').style.background = "#F19AAC";
     document.getElementById('losers').style.color = "white";
     document.getElementById('winners').style.background = "linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%)";
-    document.getElementById('winners').style.color = " #666666";
+    document.getElementById('winners').style.color = "#666666";
     map.removeControl(legend);
     legend_oldrada.addTo(map);
 
