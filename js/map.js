@@ -52,11 +52,11 @@ function getColor(d) {
                                 d === 'Політична партія ОПОЗИЦІЙНА ПЛАТФОРМА – ЗА ЖИТТЯ'  ? '#66c2a5' :
                                     d === 'Політична партія ОПОЗИЦІЙНИЙ БЛОК'  ? '#a6cee3' :
                                         d === 'ПОЛІТИЧНА ПАРТІЯ СЛУГА НАРОДУ' ? "#a6d96a":
-                                            d === 'Самовисування' ? "#ffffbf":
+                                            d === 'Самовисування' ? "lightgrey":
                                                'white';
 }
 
-
+//#ffffbf
 function style(feature) {
     return {
         fillColor: getColor(feature.properties.winners_party),
@@ -117,8 +117,8 @@ additionalLayer.addTo(map);
 var old_rada = new L.LayerGroup();
 
 function getColor_oldrada(d) {
-    return d === 'true' ? '#ffffbf' :
-                d === 'false' ? '#a6d96a' :
+    return d === 'true' ? '#E8F6D0' :
+                d === 'false' ? '#58AD60' :
                     'white';
 }
 
@@ -158,8 +158,8 @@ var legend_oldrada = L.control({position: 'bottomleft'});
 
 legend_oldrada.onAdd = function () {
     var div = L.DomUtil.create("div", "legend_oldrada");
-    div.innerHTML += '<i style="background: #a6d96a"></i><span>Залишився на окрузі</span><br>';
-    div.innerHTML += '<i style="background: #ffffbf"></i><span>Попрощався з округом</span><br>';
+    div.innerHTML += '<i style="background: #58AD60"></i><span>Залишився на окрузі</span><br>';
+    div.innerHTML += '<i style="background: #E8F6D0"></i><span>Попрощався з округом</span><br>';
     return div;
 };
 

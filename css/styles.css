@@ -336,7 +336,7 @@ h4 {
   margin: 5px 0; }
 
 .leaflet-container {
-  background-color: white; }
+  background-color: lightgrey; }
 
 .leaflet-popup-content-wrapper {
   max-width: 80vw; }
