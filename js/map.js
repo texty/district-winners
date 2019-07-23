@@ -43,9 +43,9 @@ var additionalLayer = new L.LayerGroup();
 
 function getColor(d) {
     return d === 'Політична Партія Біла Церква разом' ? '#fb9a99' :
-        d === 'політична партія Всеукраїнське об’єднання Батьківщина' ? '#fdae61' :
+        d === 'політична партія Всеукраїнське об’єднання Батьківщина' ? 'red' :
             d === 'політична партія Всеукраїнське об’єднання Свобода'  ? '#fb9a99' :
-                d === 'Політична Партія ГОЛОС'  ? '#d53e4f' :
+                d === 'Політична Партія ГОЛОС'  ? '#fdae61' :
                     d === 'Політична партія Європейська Солідарність'   ? '#cab2d6' :
                         d === 'політична партія Єдиний Центр'   ? '#fb9a99' :
                             d === 'Політична партія Об’єднання САМОПОМІЧ'   ? '#fb9a99' :
@@ -94,9 +94,9 @@ legend.onAdd = function () {
     div.innerHTML += '<i style="background: #a6d96a"></i><span>Слуга народу</span><br>';
     div.innerHTML += '<i style="background: #ffffbf"></i><span>Самовисуванці</span><br>';
     div.innerHTML += '<i style="background: #66c2a5"></i><span>ОП - За життя</span><br>';
-    div.innerHTML += '<i style="background: #fdae61"></i><span>Батьківщина</span><br>';
+    div.innerHTML += '<i style="background: red"></i><span>Батьківщина</span><br>';
     div.innerHTML += '<i style="background: #cab2d6"></i><span>ЄС</span><br>';
-    div.innerHTML += '<i style="background: #d53e4f"></i><span>Голос</span><br>';
+    div.innerHTML += '<i style="background: #fdae61"></i><span>Голос</span><br>';
     div.innerHTML += '<i style="background: #a6cee3"></i><span>Опоблок</span><br>';
     div.innerHTML += '<i style="background: #fb9a99"></i><span>Інші</span><br>';
 
