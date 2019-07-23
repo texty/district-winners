@@ -422,4 +422,7 @@ button.my-button:active {
   position: relative;
   top: 1px; }
 
+path {
+  vector-effect: non-scaling-stroke; }
+
 /*# sourceMappingURL=styles.css.map */
