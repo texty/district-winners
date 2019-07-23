@@ -117,8 +117,8 @@ additionalLayer.addTo(map);
 var old_rada = new L.LayerGroup();
 
 function getColor_oldrada(d) {
-    return d === 'true' ? '#E6EFFF' :
-                d === 'false' ? '#a6d96a' :
+    return d === 'true' ? '#F19AAC' :
+                d === 'false' ? '#E6EFFF' :
                     'white';
 }
 
@@ -158,8 +158,9 @@ var legend_oldrada = L.control({position: 'bottomleft'});
 
 legend_oldrada.onAdd = function () {
     var div = L.DomUtil.create("div", "legend_oldrada");
-    div.innerHTML += '<i style="background: #a6d96a"></i><span>Залишився на окрузі</span><br>';
-    div.innerHTML += '<i style="background: #E6EFFF"></i><span>Попрощався з округом</span><br>';
+    div.innerHTML += '<i style="background: #F19AAC"></i><span>Попрощався з округом</span><br>';
+    div.innerHTML += '<i style="background: #E6EFFF"></i><span>Залишився на окрузі</span><br>';
+
     return div;
 };
 
@@ -196,7 +197,7 @@ winners.addEventListener('click', function(e) {
 
 const losers = document.getElementById('losers');
 losers.addEventListener('click', function(e) {
-    document.getElementById('losers').style.background = "#08B930";
+    document.getElementById('losers').style.background = "#F19AAC";
     document.getElementById('losers').style.color = "white";
     document.getElementById('winners').style.background = "linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%)";
     document.getElementById('winners').style.color = " #666666";
