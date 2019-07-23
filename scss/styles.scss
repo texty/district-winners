@@ -25,9 +25,9 @@ body {
     width:50%;
     margin:30px auto;
     font-size:40pt;
-    text-align: left;
+    text-align: center;
     @media(max-width:1200px){
-      text-align: left;
+      text-align: center;
       width:90%;
       font-size:35px;
     }
@@ -40,10 +40,10 @@ body {
     width:50%;
     margin:auto;
     font-size:23px;
-    text-align: left;
+    text-align: center;
     line-height:1.6;
     @media(max-width:1200px){
-      text-align: left;
+      text-align: center;
       width:90%;
       margin:auto;
       font-size:18px;
@@ -58,7 +58,7 @@ body {
   h5 {
     font-size: 18px;
     font-weight: 400;
-    text-align: right;
+    text-align: center;
     margin:50px auto;
     width:50%;
   }
