@@ -21,7 +21,7 @@ if(window.innerWidth > 800){
 }
 
 map.scrollWheelZoom.disable();
-map.zoomControl.setPosition('bottomright');
+map.zoomControl.setPosition('topright');
 map.attributionControl.setPosition('bottomleft');
 
 

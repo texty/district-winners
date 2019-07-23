@@ -332,6 +332,13 @@ body {
     margin: 50px auto;
     width: 50%; }
 
+p {
+  width: 40%;
+  text-align: right;
+  margin: 20px 20px 20px auto;
+  font-size: 18px;
+  line-height: 1.6; }
+
 h4 {
   margin: 5px 0; }
 
