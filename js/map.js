@@ -142,8 +142,7 @@ var legend_oldrada = L.control({position: 'bottomleft'});
 
 legend_oldrada.onAdd = function () {
     var div = L.DomUtil.create("div", "legend_oldrada");
-    div.innerHTML += "<h4>Кольорами позначено:</h4>";
-    div.innerHTML += '<i style="background: #a6d96a"></i><span>Депутат 8 скликання</span><br>';
+    div.innerHTML += '<i style="background: #a6d96a"></i><span>Народний депутат VIII скл.</span><br>';
     div.innerHTML += '<i style="background: #ffffbf"></i><span>Нове обличчя</span><br>';
     return div;
 };
