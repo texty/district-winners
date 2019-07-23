@@ -136,16 +136,29 @@ function style_oldrada(feature) {
 
 function onEachFeature_oldrada(feature, layer) {
 
-    if(feature.properties.deputes_14_name != "NA" && feature.properties.deputes_14_name != null){
+    if(feature.properties.deputes_14_name != "NA" && feature.properties.deputes_14_name != null && feature.properties.deputes_14_exit === "true"){
         layer.bindPopup("<span style='font-size:15px; font-weight: 800'>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "</span><br>" +
-            "<span style='font-size:15px; font-weight: 800'>" +feature.properties.deputes_14_name + "</span> <br><br>" +
+            "<span style='font-size:15px; font-weight: 800'>" +feature.properties.deputes_14_name + "</span><br><br>" +
+            "<span style='font-size:15px; font-weight: 800; color:red'> ПРОГРАВ </span> <br><br>" +
+            "<div style='display:grid; grid-template-columns: auto 100px;'><div>" +
+            feature.properties.deputes_14_info +  "<br></div>" +
+            "<image class='photo' src='" + feature.properties.deputes_14_image + "'/></div>"
+
+        );
+    } else if(feature.properties.deputes_14_name != "NA" && feature.properties.deputes_14_name != null && feature.properties.deputes_14_exit === "false"){
+        layer.bindPopup("<span style='font-size:15px; font-weight: 800'>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "</span><br>" +
+            "<span style='font-size:15px; font-weight: 800'>" +feature.properties.deputes_14_name + "</span><br><br>" +
+            "<span style='font-size:15px; font-weight: 800; color:red'> ВИГРАВ </span> <br><br>" +
             "<div style='display:grid; grid-template-columns: auto 100px;'><div>" +
             feature.properties.deputes_14_info +  "<br></div>" +
             "<image class='photo' src='" + feature.properties.deputes_14_image + "'/></div>"
 
         );
     } else if(feature.properties.deputes_14_name === "NA"){
-        layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>" + feature.properties.deputes_14_joinName.toUpperCase() + "</b>");
+        layer.bindPopup("<span style='font-size:15px; font-weight: 800'>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "</span><br>" +
+            "<span style='font-size:15px; font-weight: 800'>"+ titleCase(feature.properties.deputes_14_joinName) + "</span></b>" + "<br><br>"+
+            "<span style='font-size:15px; font-weight: 800; color:red'> НЕ ВИСУВАВСЯ </span> <br><br>"
+        );
 
     }  else if(feature.properties.deputes_14_name === null) {
         layer.bindPopup("<b>ВИБОРЧИЙ ОКРУГ № " + feature.properties.id + "<br>"+
@@ -211,3 +224,16 @@ losers.addEventListener('click', function(e) {
     old_rada.addTo(map);
 
 });
+
+
+function titleCase(str) {
+    var splitStr = str.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+        // You do not need to check if i is larger than splitStr length, as your for does that for you
+        // Assign it back to the array
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    // Directly return the joined string
+    return splitStr.join(' ');
+}
+
